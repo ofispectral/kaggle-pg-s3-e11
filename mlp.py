@@ -61,11 +61,9 @@ model.compile(
 history = model.fit(
     X_train,
     y_train,
-    epochs=5,
-    steps_per_epoch=len(X_train) // 32,
+    batch_size=64,
+    epochs=2,
     validation_data=(X_val, y_val),
-    validation_steps=len(X_val) // 32,
-    verbose=1
 )
 
 
